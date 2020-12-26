@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void ft_print_alphabet(void)
+void ft_print_reverse_alphabet(void)
 {
 	char letter = 'z';
 	while(letter != 96)
@@ -12,5 +12,5 @@ void ft_print_alphabet(void)
 
 int main()
 {
-	ft_print_alphabet();
+	ft_print_reverse_alphabet();
 }
