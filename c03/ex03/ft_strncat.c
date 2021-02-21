@@ -8,10 +8,7 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while(str[i] != '\0')
-	{
 		i++;
-	}
-
 	return(i);
 }
 
@@ -23,9 +20,8 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	i = ft_strlen(dest);
 	j = 0;
 	while(src[j] && j < nb)
-	{
 		dest[i++] = src[j++];
-	}
+	dest[i] = '\0';
 	return(dest);
 }
 
