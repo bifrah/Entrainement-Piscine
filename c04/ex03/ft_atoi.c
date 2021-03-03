@@ -3,7 +3,7 @@
 
 int ft_is_space(char c)
 {
-	if(c == ' ' ||c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '-' || c == '+')
+	if(c == ' ' ||c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
 		return(1);
 	return(0);
 }
@@ -13,6 +13,13 @@ int ft_is_numeric(char c)
 	if(c < 48 || c > 57)
 		return(0);
 	return(1);
+}
+
+int ft_is_score(char c)
+{
+	if(c == '-' || c == '+')
+		return(1);
+	return(0);
 }
 
 int ft_is_negative(char *str)
@@ -43,6 +50,10 @@ int	ft_atoi(char *str)
 
 	while(ft_is_space(str[i]) == 1)
 		i++;
+	while(ft_is_score(str[i]) == 1)
+		i++;
+	if(ft_is_space(str[i]) == 1)
+		return(0);	
 	while(ft_is_numeric(str[i]) == 1)
 	{
 		result *= 10;
@@ -58,7 +69,7 @@ int main()
 {
 	char *str;
 
-	str = "   --124a68";
+	str = "   -  113  1234ab567";
 	printf("%d\n", atoi(str));
 	printf("%d\n", ft_atoi(str));
 }
